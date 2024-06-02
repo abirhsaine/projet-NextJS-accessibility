@@ -1,0 +1,110 @@
+/* FlexCards.module.css */
+.flexCards.wrapper{
+  width: 100%;
+}
+.flexCards .card {
+  width: 80px;
+  height: 420px;
+  border-radius: .75rem;
+  background-size: cover;
+  cursor: pointer;
+  overflow: hidden;
+  margin: 10px  0px !important;
+  padding: 10px 0px;
+  display: flex;
+  align-items: flex-end;
+  transition: .6s cubic-bezier(.28,-0.03,0,.99);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1), 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.flexCards .card > .row {
+  color: white;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.flexCards .card > .row > .icon {
+  background: #223;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+}
+
+.flexCards .card > .row > .description {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  height: 80px;
+  width: 520px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition-delay: .3s;
+  transition: all .3s ease;
+}
+
+.flexCards .description p {
+  color: #b0b0ba;
+  padding-top: 5px;
+}
+
+.flexCards .description h4 {
+  text-transform: uppercase;
+}
+
+.flexCards .card.active {
+  width: 100%;
+}
+
+.flexCards .card.active .description {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.flexCards .overlay{
+  width: 100%;
+  height:100%;
+  position: absolute;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1) 10%, transparent 100%);
+  margin-bottom: -10px;
+}
+/*
+.card[for="c1"] {
+  background-image: url('./img1.jpeg');
+}
+
+.card[for="c2"] {
+  background-image: url('./img2.jpeg');
+}
+
+.card[for="c3"] {
+  background-image: url('./img3.jpeg');
+}
+
+.card[for="c4"] {
+  background-image: url('./img4.jpeg');
+} */
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .flexCards .container {
+    flex-direction: column;
+    margin: 0;
+  }
+  .flexCards.wrapper{
+    width: calc(100vw - 2*32px);
+  }
+  .flexCards  .card {
+      width: 100%;
+      height:80px;
+      margin: 10px;
+}
+.flexCards  .card.active{
+  width: 100%;
+      height:300px;
+  }
+}
